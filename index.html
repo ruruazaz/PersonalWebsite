@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruruazaz</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+// <![CDATA[
+var speed=100; // speed of wobbling, lower is faster
+var height=3; // height of wobbling in pixels
+var alink="http://www.mf2fm.com/rv"; // page to link text to (set to ="" for no link)
+
+/****************************
+*    Wobbly Text Effect     *
+*(c) 2003-6 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var wobtxt, wobble, wobcnt=0;
+window.onload=function() { if (document.getElementById) {
+  var i, wobli;
+  wobble=document.getElementById("wobble");
+  wobtxt=wobble.firstChild.nodeValue;
+  while (wobble.childNodes.length) wobble.removeChild(wobble.childNodes[0]);
+  for (i=0; i<wobtxt.length; i++) {
+    wobli=document.createElement("span");
+    wobli.setAttribute("id", "wobb"+i);
+    wobli.style.position="relative";
+    wobli.appendChild(document.createTextNode(wobtxt.charAt(i)));
+    if (alink) {
+      wobli.style.cursor="pointer";
+      wobli.onclick=function() { top.location.href=alink; }
+    }
+    wobble.appendChild(wobli);
+  }
+  setInterval("wobbler()", speed);
+}}
+
+function wobbler() {
+  for (var i=0; i<wobtxt.length; i++) document.getElementById("wobb"+i).style.top=Math.round(height*Math.sin(i+wobcnt))+"px"
+  wobcnt++;
+}
+// ]]>
+</script>
+    
+</head>
+<body>
+
+    <header style="margin:1%;">
+        <div id="wobble" style = "color:chocolate;">ruru's website</div>
+    </header>
+
+    <div id = "left"> 
+        
+    </div>
+
+    <aside id = "col1" style = "min-width:300px;">
+
+        <aside id = "nav" style = "min-width:300px;">
+            <img src = "images/smilenotnose.gif" style = "display:inline-block; position:absolute; margin-top:3%; margin-left:65%; width:20%;">
+            <p style="background-color:hsl(23, 56%, 92%);margin-top:2%;color:brown; font-size:120%;text-indent:5px; margin-bottom:1px">navigation</p>
+            <ul style = "margin-top:5px;text-indent:7px">
+                <li id = "homeBtn" onclick = 'changeContent("home")' class = "nav">home</li>
+                <li id = "aboutBtn" onclick = 'changeContent("about")' class = "nav">about me</li>
+                <li id = "blogBtn" onclick = 'changeContent("blog")' class = "nav">blog</li>
+                <li id = "favsBtn" onclick = 'changeContent("favs")' class = "nav">favorites/obsessions</li>
+                <li id = "resourcesBtn" onclick = 'changeContent("resources")' class = "nav">resources</li>
+                <li id = "otherBtn" onclick = 'changeContent("other")' class = "nav">other</li>
+                <li id = "guestbookBtn" class = "nav"> <a class = "nav" href = 'https://ruruazaz.atabook.org/'>guestbook</a></li>
+            </ul>
+        </aside>
+
+        <aside id = "status" style = "min-width:140px;">
+            <img src="images/status_icon.jpg" id = "status_icon">
+            <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content" style = "font-size:0.8rem"></div></div><script src="https://status.cafe/current-status.js?name=ruruazaz" defer></script>
+        </aside>
+
+        <aside id = "todo" style = "min-width:140px;">
+            <p style = "text-indent:3%">to-do website things</p>
+            <ul>
+                <li>redo favorites page</li>
+                <li>make blog cooler</li>
+                <li>make guestbook pretty</li>
+                <li>be more connected! (join webrings and explore other's sites!)</li>
+                <li>mayyyybe set up rss feed</li>
+                <li>shrinneeesss???</li>
+            </ul>
+            <!--# follow -->
+        </aside>
+
+    </aside>
+
+
+    <article id = "col2" style = "overflow-y:scroll;"> 
+    
+    </article>
+        
+    <div id = "right"> 
+        <div id = "home" class = "content" style = "overflow-x:hidden; overflow-y:hidden;padding-left:0%">
+            <h3 id = "greeting" style = "color:brown; font-size:200%; text-align:left; text-indent:-3%; font-family:cursive; margin:2%; text-indent:-100%;">HELLO and welcome!</h3>
+            <p>my name is ruru and welcome to my website!! i made this because i came across the indie web
+                on youtube and saw all these awesome websites and i decided. huh. i wanna make one myself.</p>
+            <p>please keep in mind that i am still quite a noob to coding and html and css and js so please excuse if there are wonky things here ;-; i am doing my best.
+                im literally not joking when i say the code behind this is a hot mess. i don't even know how its working. i brute forced like half of this.
+            </p>
+            <p>also, apologies for it being super mobile unfriendly!! im too lazy rn but maybe someday.</p>
+            <p>navigation is in the top left box if you'd like to explore!!!</p>
+            <div class = "wrapper" id = "blinkies" style = "display:flex;flex-wrap:wrap;margin-bottom:5%">
+                <img class = "blinkies" src = "images/blinkies/0130-twilightsparkle.gif">
+                <img class = "blinkies" src = "images/blinkies/0019-candy.gif">
+                <img class = "blinkies" src = "images/blinkies/0275-stressed.gif">
+                <img class = "blinkies" src = "images/blinkies/0246-heartflowergrass.gif">
+                <img class = "blinkies" src = "images/blinkies/0203-youtubelogo.gif">
+                <img class = "blinkies" src = "images/blinkies/0281-tumblrgrl.gif">
+                <img class = "blinkies" src = "images/blinkies/fmcl.gif">
+            </div>
+            <hr>
+            <div></div>
+            <div id = "music" style = "float:right;position:relative;width:40%;margin-top:6%; margin:auto; text-align:center;justify-content:right">
+                <p>current fav song (click to play):</p>
+                    <p>Be Yourself Or Die Dreaming <br> Nouvelle Story</p>
+                <div class = 'musicpic' onclick = 'playPause("byodd")'>
+                    <img src = 'images/byoddimg.jpg' width = 40%></div>
+                <audio controls id = 'byodd' style = 'display:none'>
+                    <source src = "audio/Nouvelle Story - Be Yourself Or Die Dreaming.mp3">
+                </audio>
+            </div>
+            <script>
+
+                function playPause(songname){
+                    song = document.getElementById(songname)
+                    if (song.paused){
+                        song.play()
+                        song.volume = 0.3
+                    }else{
+                        song.pause()
+                    }
+                }
+            </script>
+
+            <aside id = "changelog" style = "position:relative;width: 40%;background-color:rgb(255, 249, 249); margin-top:5%;">
+                <h5>changelog (mm/dd/yyyy)</h5>
+                
+                <p>03/19/2026: deleted blog lmfao, making new blog?? also added a bit of music and guestbook</p>
+                <p>12/22/2025: reworked about me, also started blog</p>
+                <p>07/22/2025: added status cafe!</p>
+                <p>07/19/2025: started working on website</p>
+                
+            </aside>
+        </div>
+
+
+        <div id = "about" class = "content">
+            <h1 style = "text-align:center; color:brown;">about ME!</h1>
+            <p style = "text-align:center; font-family:'Courier New', Courier, monospace; font-weight:bold;">[  ruru  |  any pronouns  |  eng/中文  ]</p>
+            <p>hellooooo...</p>
+            <p>this is now the THIRD TIME im writing this about me. each time i look at the last one, i just cringe out of my skin and 
+                feel the need to scrap all of it because theres no wayyy i was so uncool back then. i think in the future i'll think this current 
+                about me also sucks just going along w the pattern, but i'm gonna try having this one at least stick for a bit longer and document 
+                the more stable things abt myself (unlike my music taste, which has changed again!)
+            </p>
+            <p>i think that math is super cool and fun!!! i love the satisfaction of solving a problem and being like ohhh that's how that works. 
+                i think that while i "discovered" my love for math only these past few months, that i've always had an inherent joy in solving problems.
+            </p>
+            <p>i also like drawing but i've been doing it less of it nowadays because life throws u curveballs man. creative writing too, but drawing 
+                has def been a bigger thing in my life overall. a bit sad but its alright.</p>
+            <p>my goal for now and probs for ever is simply to learn more about the world and our society and the way things work!!! i want to be more 
+                informed on things and be able to talk about them and also make educated actions!!!! 
+            </p>
+            <p>i'd also like to just be more... out there in general. i am a slight hermit socially in that i keep to a close group of ppl and don't rlly 
+                adventure outside my comfort zone, but i think i'm missing out on a lot, and also giving less back to the world in doing so. anyways, i think 
+                these goals reflect my core values and won't change much over time. thank u for coming to my ted talk.
+            </p>
+
+            <!-- IM REDOING MY ABOUT ME AGAINNN
+            <p>i am ruru (any pronouns) and im just a random person on the internet. i speak mainly english and can speak conversational
+                chinese (kind of not really.... its a work in progress). </p>
+            <p>so, im actualy redoing my about me section because i feel like i've changed enough over the 5 ish months since i created this website that my old about me didn't reflect the person 
+                i was anymore. there have been shifts in many of my interests that i wrote down here, which makes sense, and i wasn't thinking too much about people viewing this page in the future. and maybe this surge of 
+                motivation will fall away almost immediately after my current winter break ends, but i still would like to redo it, and maybe try to center on the more 
+                core parts of who i am. or i think i'll talk a bit about my interests too, even if they are fleeting, because whatever, who cares, out personalities 
+                will always be fleeting, since we are always improving (hopefully) and becoming different people in the process. 
+                basically everything about me is subject to change, but whats true presently will still be true for just a bit, so ill preserve it here anyways. plus its like a time capsule
+                and i can look back on this and reflect on hopefully how much ive grown. i just realized a ranted about a whole lotta nothing so i guess i'll actually get into it now!
+            </p>
+            <p>trying to explain my identity is still really difficult though. who even am i. i don't know what to say again.</p>
+            <p>well... recently, i've discovered a passion for math of all things. it's very strange because obviously math has been prevalent throughout my entire life, yet it is 
+                only now when i've actually begun to appreciate the beauty of a lot of it, as well as the clarity and precision in the ways people write and talk about math. honestly, i think 
+                the reason i like math is that i just like solving puzzles, or my brain is satisfied by a puzzle completed, and so i like doing math because math is just a bunch of puzzles. but then i suppose 
+                you could argue that everything in the world can be framed as a puzzle, blablabla, whatever, math is the one that tickles my brain in the way that i like.
+            </p>
+            <p>i would say some of my main goals right now are: learn to speak and write well, learn more about history and politics and how they inform our modern society, and honestly just 
+                learn about the world in general and be able to talk about it and respond to things that are happening. i think a lot of my life has consisted of me sleepwalking through all
+                this crazy stuff happening around me but i'd like to change that. idk. i think i just get wrapped up in my own little bubble sometimes. also, i never really thought of myself 
+                as a goal oriented person but i've somehow become one, and im not sure how that happened, but i think its good for me.
+            </p>
+            <p>looks like i talked about music in my last about me, so i will talk about some here as well! ive been jamming out to tyler the creator a lot, especially when i'm working out (his music just has 
+                that bounciness and like non-personalness (in a good way) that gets me pumping.) ive also been learning liebestraum no 3 by lizst because wow that piece is so beautiful. but don't worry will wood,
+                i'm sure youll make a return soon enough.
+            </p>
+            <p>side note: I SHOULD REALLY START BLOGGING ABOUT RANDOM STUFF i think it would be fun and also good writing practice kind of sort of. in an age where information is passed on in small chunks (bc internet)
+                and therefore i think in small chunks, i think i need a place where i talk about a topic at length and maintain my focus during it. focus is a rare trait nowadays that i would like to acquire and preserve. 
+                i also need to STICK TO THE SHIT I SAY. im such a flaker. oh hey ig thats another lil something about me lmao.
+            </p>
+            -->
+                
+                <!-- old about me
+            <p>im just realizing i really have no idea what to say. um.</p>
+            <p>im a multifaceted person B). im a big fan of learning things in general. i like physics for some reason, dont ask why, but im also a big fan of drawing and 
+                writing. actually, one of my current biggest goals is write well, and by that i mean being able to express my ideas concisely but effectively. which is why i like to keep
+                a journal to document my thoughts about books ive read and the Life Experience and stuff. maybe i'll transcribe some entries here. i'd also like to get better at creative writing too, just for fun.</p>
+            <p>if im being totally honest, if you found me at a random time, i would probably be either sleeping/eating or watching the current tv show im obsessed with (currently its house md) (why are all the 2000s shows with the non-canon mlm ships so good??) 
+                or youd find me on ao3 reading about said obsession LMAO. but i do read classic literature too (just finished 1984 by george orwell). so yeah. im multifaceted i guess?</p>
+            <p>i actually dont listen to much music rn, but when i do its usually this one random radiohead playlist or something from the 70s, like david bowie or elton john or the smiths. weird, bc my usual taste is indie pop like 
+                will wood and stuff. my music taste is kinda like a cycle because i always 
+                return to artists that i haven't listened to in forever then just randomly think of again. but the way i find new music is mostly those "aesthetic playlists" on yt while im studying lol.</p>
+            -->
+            <p>other random facts about me:</p>
+            <div class = "wrapper" id = strwbrries><img src="images/13_fruit.gif" id = "strawberries"></div>
+            <p>- i really like chocolate strawberries</p>
+            <p>- my fav type of tea is earl grey</p>
+            <p>- i love to hoard stickers and never use them (its a problem)</p>
+            <p>- current fav music artist: louie zong or masayoshi takanaka or smth, idrk </p>
+        </div>
+
+
+        <div id = "blog" class = "content">
+            <aside id= "blogselect" style = "background-color:rgb(255, 253, 252);padding-top:2%">Entries:
+                <ul style = "padding-left:18%; margin-top:3%">
+                    <li id = "entry1Btn" class = "blogselect">heyo</li>
+                    <!-- <li id = "entry2Btn" class = "blogselect">week of 12/28/2025</li> -->
+                </ul>
+            </aside>
+            <aside id = "blogpage" style = "border-style:dotted;font-family: Calibri, 'Gill Sans', 'Gill Sans MT';overflow-y: scroll;"></aside>
+        </div>
+
+        <div id = "favs" class = "content">
+            <p style = "text-align:center; font-size:1.3em;font-style:italic;background-color:hsl(23, 56%, 92%);color:brown;">current obsession: House MD (TV)</p>
+            <p style = "text-align:center; margin:10%; margin-top:0;">its about this doctor named Gregory House (yes thats his real name) and hes brilliant diagnostician but also a jerk and disabled so he has to walk
+                with a cane, and he also is addicted to vicodin. every episode he goes around solving medical mysteries while also committing medical malpractice and gets
+                away with it because he actually helps the patient survive. not even joking, he has his diagnostic team of cameron, chase, and foreman break-and-enter into the patients house every episode to look for clues.  
+                he has only one true friend named James Wilson who is the head of oncology and who is also genuinely insane except he's nice
+                so you don't notice it as much, but hes been divorced 3 times and almost lost his job because he defended house against a multimillionaire. hilson4life or something. everyone on this show 
+                is insane and its great! (note: might make proper shrine for this sometime) (update as of dec 2025: i have not watched house since september but im keeping this up bc i think its funny)
+            </p>
+            <div style = 'width:20%;position:absolute; margin-top: -5%; margin-left: 70%'><img src = 'images/wilsonLockIn.jpg' style = 'width:100%'> 
+                <a href = 'https://www.reddit.com/r/HouseMD/comments/1kwp0ph/this_picture_my_wallpaper_got_me_through/'>credit</a>
+            </div>
+
+            <p style="background-color:hsl(23, 56%, 92%);margin-top:2%;color:brown; font-size:120%;">favorite media:</p>
+            <ul>
+                <li>BBC Merlin (TV)</li>
+                <li>The Good Place (TV)</li>
+                <li>Brooklyn 99 (TV)</li>
+                <li>The Lego Movie (Movie)</li>
+                <li>Life Series (Youtube Series)</li>
+                <li>Spiderman: Into the Spider-Verse (Movie)</li>
+            </ul>
+            <p style="background-color:hsl(23, 56%, 92%);margin-top:2%;color:brown; font-size:120%;">favorite games:</p>
+            <ul>
+                <li>Minecraft</li>
+                <li>Hades</li>
+                <li>Omori</li>
+            </ul>
+        </div>
+
+        <div id = "resources" class = "content">
+            <h3>here are the resources i used to make this website work!</h3>
+            <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button12.gif"></a><!-- button by bunzorg.nekoweb.org -->
+            <a href = "https://99gifshop.neocities.org/"><img src = images/99gifshop.png></a>
+            <a href="https://tamanotchi.world" target="_blank"><img src="images/tamanotchi.gif" alt="TamaNOTchi Badge"></a>
+            <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
+            <ul>
+                <li class = "rsc"><a href = "https://99gifshop.neocities.org/items/3/">99gif shop</a></li>
+                <li class = "rsc"><a href = "https://blinkies.cafe/">blinkies.cafe</a></li>
+                <li class = "rsc"><a href = "https://www.youtube.com/@BroCodez"> Brocode Youtube</a> - literally the GOAT for html/css/js tutorials</li>
+                <li class = "rsc"><a href = "https://codepen.io/sadness97/full/dPoEqNN"> codepen.io/sadness97/full/dPoEqNN</a> - background image</li>
+                <li class = "rsc"><a href = "https://www.mf2fm.com/rv/">RV's free Javascript/DHTML effects</a> - wobbly title</li>
+                <li class = "rsc"><a href = "https://status.cafe/"> status.cafe</a> - easy way to update status</li>
+                <li class = "rsc"><a href = "https://www.w3schools.com/">w3schools</a></li>
+            </ul>
+        </div>
+
+        <div id = "other" class = "content">
+            <h5 style = "margin-top:10px">tamanotchi!!</h5>
+            <a style = "margin-left: 30%" href="https://tamanotchi.world/31389c"><img src="https://tamanotchi.world/i/31389" alt="It's tamaNOTchi! Click to feed!"></a>
+        </div>
+
+        <div id="entry1">
+            <p> ormm so i lowkey don't really like the old blog anymore because im realizing its kinda cringe....  like lots of it is just
+            random stupid facts that are really common knowledge and make me seem stupid lmao, or its just useless lists of surface level facts
+             which are also stupid. if u wanna see it, its all commented out in the actual html file 
+            but i am not gonna have it actually here anymore
+            </p>
+            <p>instead, the plan is to try to improve my language abilites!! by doing like a trilingual blog with english chinese and french!!! mostly for myself
+                but if someone stumbles upon it, then that'd also be pretttyyy coooollll. gonna link it right here:
+            </p>
+            <a href = "langblog.html" style = "font-size:3rem">the new blog?</a>
+        </div>
+        
+
+        <!--
+        <div id = "entry1">
+            <p>for now, i think i'm gonna have these blogs be about what i learned every day and why they matter!! 
+                i feel that i forget a lot about what i learned every day so this will force me to do some active recall, and 
+                i think its also a pretty cool blog idea to document random facts and stuff. :D lets just hope i stick to it...
+            </p>
+            <h5 style = "text-align: center">monday, 12/22/2025</h5>
+            <ul style = "padding-left:5%; padding-top:0px">
+                <li><b>jane goodall's impact:</b> the traditional rules say that one should be collecting data on animals purely objectively, 
+                    watching them from afar and observing them and cataloguing their actions systematically, creating some level of distance of us and them, never assuming that those animals might 
+                    feel the same things human do, nor that they have culture like humans do. she broke that rule by interacting with the chimpanzees!!
+                    and she showed that they do also feel things like anger and grief and that animals do have culture and rituals, leading to a whole new way of 
+                    doing research which led to discoveries like the fact that elephants bury their dead!! so by breaking free of the usual scientific methods, and emotionally connecting 
+                    with the animals she was supposed to distance herself from, she found out that they really are not that different from us and reshaped our perspective on their "humanity".
+                    <a href = "https://youtu.be/d_FzzLeA6pk?si=k8R0uVhAAa2k3hJO"> vlogbrothers yt</a>
+                </li>
+                <li><b>christmas trees over the years:</b> there was general info about its origins from germany, as well a tiny blurb on every decade, but the two that stood out to me were 1940s and 1950s (aka during ww2 and after ww2). 
+                    in the 1940s, people skimped on extravagant christmas trees because of shortages during wartime, and they also rejected ornaments w ties to germany and japan, but they still maintained their holiday spirit 
+                    through homemade decor like popcorn garlands! and in the 1950s they 
+                    were back to super duper flashy ornamented trees, because the war was over and people wanted to spend more. i forget how key historical events like war will impact the most mundane parts of people's lives.
+                    <a href = "https://www.history.com/articles/christmas-tree-trends"> history.com</a>
+                </li>
+                <li><b>big ai companies maintaining flexibility:</b> if i understand correctly, ai companies need huge centers to store massive amounts of data and such. however, 
+                    building them comes at a risk bc of the chance ai demand slows dramatically and so there is no longer much value connected to ai. so, to minimize risk, they
+                    are choosing to rent out data centers and also avoiding costs themselves by doing partnerships w other firms, and making these other firms do most of the financing???? 
+                    (i think i need to read up abt how company partnerships work; i dont really get this rn). also, big ai companies are signing short term 3-5 year deals with neoclouds (who provide data centers) 
+                    so they dont need to make long term commitments.
+                    <a href = "https://www.nytimes.com/2025/12/15/technology/ai-risks-debt.html"> nytimes</a>
+                </li>
+            </ul>
+            <p>ok so this ended up being a lot longer + taking a lot longer than i thought. gonna try to condense info for next time </p>
+            <h5 style = "text-align: center;">tuesday, 12/23/2025</h5>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>how self reference causes problems in mathematics:</b> causes contradictions. say, for example, say set S is the set of all sets which DON'T include themselves. then either way if set S includes S or not, there 
+                    arises a problem. somehow this gets even more problematic when you want to prove if something can be proved or not, and it shows there are some things in math which are just unprovable. i lowkey dont get it. nor why it matters. 
+                    lol maybe id have sided with the intuitionists rather than the formalists during that era.
+                    <a href = "https://www.youtube.com/watch?v=HeQX2HjkcNo"> veritasium yt</a>
+                </li>
+                <li><b>private equity:</b> owns everything?? so from my understanding, ppl invest in private equity, then private equity uses that money to 
+                    lend to other companies who are potentially struggling, and they charge a low interest rate. but because of the amt of money they lend in the first place, they still make lotsa money. 
+                    anyways it is bad because then there is pressure from the firms to increase profit, even at the expense of lives (see: nursing home whose short-term mortality rate is 10% greater)
+                    <a href = "https://www.youtube.com/watch?v=M_leNmT7xvM"> good work yt</a>
+                </li>
+            </ul>
+            <p>on a kind of business / economics kick rn, mostly about the noodles of capitalism (and boy is it something)</p>
+            <h5 style = "text-align: center;">wednesday, 12/24/2025 + thursday, 12/25/2025 (christmas!)</h5>
+            <p>yes this is shorter but can you really blame me... tis the holiday season okay</p>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>the stock market:</b> most (or at least many) (or at least hank green) does a thing where they invest into the s&p 500 and the money gets divided among the firms in the s&p 500. but also, doing that is currently 
+                    Probably Bad because so much of the money is concentrated in the top top firms which are all big tech ai companies, and if the bubble pops (which many say it will) then everything explodes and ppl who have invested 
+                    in those lose a lot of money. 
+                    <a href = "https://youtu.be/VZMFp-mEWoM?si=x3cAeQQgGSJ7m30k"> hank green yt</a>
+                </li>
+                <li><b>late stage capitalism in japan / america:</b> because of how income inequality is increasing, there are effects on daily life in japan (and also recently happening in the US) such as people self isolating (hikikomori), 
+                    ppl getting convenience store food bc unable to prepare meals at home due to lack of time, ppl not having sex (relates to isolation), not having kids, generally being depressed. so thats obviously all very bad, and i didnt realize it was like that 
+                    in japan esp, probably bc according to the article that these are often portrayed as lifestyle quirks rather than issues.
+                    <a href = "https://substack.com/home/post/p-181204292"> ellie substack</a>
+                </li>
+            </ul>
+            <h5 style = "text-align: center;">friday, 12/26/2025</h5>
+            <p>im mostly stopping the "why it matters" part of these entries bc it gets way too long, and usually i think the significance is self explanatory. if the why it matters has actual 
+                additional insight, then i'll put it in.</p>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>interest rates and the federal reserve and presidential power:</b> if there is inflation, then interest rates should go up because then people don't borrow as much money and don't spend as much. vice versa for if the economy is in recession. 
+                    however, trump wants rates to go down to stimulate the economy bc thats what he promised, but that wouldn't be good long term. and also, the federal reserve is supposed to be not involved in political party drama because then ppl could try to 
+                    manipulate them for advancing short term political goals rather than long term stability. lyndon b johnson was apparently also guilty of attempting to overexert his power in this way.
+                    <a href = "https://youtu.be/V0_-eiDrfA0?si=kyrQbyM_SSm_iqvT"> good work yt</a>
+                </li>
+                <li><b>kwanzaa and its origins:</b> apparently was only created just in the 1960s, while african americans were fighting for civil rights, and was originally created as an alternative kinda to the white 
+                    christian christmas but came to be overall a holiday to celebrate unity for the african american community. i think its p cool how one can kinda "manually" create culture with traditions and rituals 
+                    to emphasize and deepen the values one cares about. also sheds light on resilience of communities, and wow the civil rights movement was so recent and the person who created kwaanzaa is currently a professor at california state uni.
+                    <a href = "https://www.history.com/videos/kwanzaa?cmpid=email-hist-inside-history-2025-1226-12262025&om_rid="> history.com</a>
+                </li>
+                <li><b>diplomacy between the us and china through ping pong:</b> the year is 1971 and the cold war is going on but ppl (us and china) want to be warmed up. then during the table tennis world champs, on a bus, this hippie american and the best player on the chinese team somehow bonded, and 
+                    the exchange like facilitated general friendliness between the two teams which led to both teams getting invited to each others countries and also a meeting between president nixon and mao ze dong in china, and also i think trade got better between the two countries. 
+                    also that hippie guy is so swag, dude just be vibing and being himself.
+                    <a href = "https://www.history.com/articles/ping-pong-diplomacy"> history.com</a> 
+                </li>
+            </ul>
+        </div>
+        <div id = "entry2">
+            <h5 style = "text-align: center;">sunday, 12/28/2025</h5>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>beginning of film / lumiere brothers:</b> movie technology first started in the 1830s and was basically a series of moving images on a film. then there were many advances then edison and someone else in 
+                    1890 ish created the kinetograph, or the first moving picture camera. and the lumiere brothers took that to make a combo of movie camera and projector so a video could be put on for an audience, and the earlieth twentieth century is 
+                    when film began to really take off.
+                    <a href = "https://www.history.com/this-day-in-history/December-28/first-commercial-movie-screened?cmpid=email-hist-tdih-2025-1228-12282025">history.com</a>
+                </li>
+                <li><b>LUCA (last universal common ancestor):</b> was, according to analysis using probability of genes of current animals, was probably a very complex organism. it had the ability to fight off viruses probably. 
+                    however it also probably existed very early on, when the earth was just like 400 million years old. (earth is arnd 4.54 billion yrs old) also yes there is a thing such as LUCA and it definitely exists, and charles darwin was the 
+                    one who started thinking about it i think.
+                    <a href = "https://youtu.be/p9XHI_26cPE?si=SGZ6P3nrOPtVNzq5"> quanta magazine yt (first segment)</a>
+                </li>
+                <li><b>ai predictions of protein structures:</b> proteins are made of a chain of amino acids. basically, many amino acids chain together, and based on how they chain together, the chain will fold itself into a certin shape / knot looking thing. 
+                    so scientists want to figure out what shapes the proteins are folded into. ai helped a lot with that! and now they can also try to create new proteins by first designing the shape and then making ai figure out which amino acids are needed / how 
+                    they're arranged in that shape. its a big advancement, and also exemplifies how biology is becoming more of a computational science.
+                    <a href = "https://youtu.be/p9XHI_26cPE?si=SGZ6P3nrOPtVNzq5"> quanta magazine yt (last segment, same vid as above)</a>
+                </li>
+            </ul>
+            <h5 style = "text-align: center;">monday, 12/29/2025</h5>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>how llm models work (very simplified):</b> is all about prediction by numerically calculating the likeliness of outcomes. when writing a sentence, a model needs to continuously predict what word comes next. so say you have the initial input 
+                    "i swam in the ____" and wanna predict what comes next (hopefully lake or pool or river). each word in the input corresponds w a vector, or a huge list of numbers basically, all from -1 to 1. then you take all these vectors and stack them into one big vector, and using some voodoo magic (black box) multiplying this
+                    huge vector by multiple matrices (values in matrices representing parameters) multiple times, you end up with a single vector, and each item in that vector corresponds with a word and the value corresponds w the likelihood that that word is next. 
+                    <a href = "https://youtu.be/LPZh9BOjkQs?si=MwHwFvnqGzBWDW94">3b1b yt (note: is part of series)</a>
+                </li>
+                <li><b>why the F-150 lightning failed to take off:</b> (the F150 lightning is the ford electric truck) electric vehicles (EVs) are often good. but to sell them, you need car dealers to hype them up. however, EVs are bad for car dealers because the car dealer loses money because with an EV, you need to spend less on future services (such as prake pads and oil changes) 
+                    so therefore they lose money. also, trucks are big and difficult to make electric. they are affected more by air resistance which affects distance. but nowww ford is making the f150 an EREV (extended range ev), which i think will make them better and more desirable somehow? also they're making smaller cars EVs too.
+                    <a href = "https://www.youtube.com/watch?v=j7OvA__3Dzk"> hank green yt</a>
+                </li>
+            </ul>
+            <p>note: there was a vid on physics and ai which i dont actually understand right now but might get later after learning more abt neural networks in general, hopefully it makes an appearance here</p>
+            <h5 style = "text-align: center;">tuesday, 12/30/2025</h5>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>back propogation in llm using calculus:</b> when you input something into the machine, you want a specific output. now, if the actual output is different from the desired output, then there is a high "cost", and the goal is to minimize this cost, essentially by finding the vector of del(cost) to make the cost "roll down the hill". to find it, simply put, you first work backwards, starting from the output then looking at the layer immediately preceding the output. 
+                    the preceding layer has nodes, then there are weights which determing how much each node contributes to each output node. in essense, you want to figure out how a tiny change in the weight would produce a tiny change in the cost. or, dC / dw, where C is a function of the weights. all of this can help find the point where C is lowest. i think. lowkey its confusing and i think multi is involved lol.
+                    <a href = "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=4"> 3b1b yt (part of series)</a>
+                </li>
+                <li><b>hardware getting more expensive (bc of monopolies):</b> nvidia sells chips and dominates a lot of the market. but nvidia doesnt have fabs, they buy chips from tsmc (who has zero competitors). but to make the chips, tmsc needs machines w chip euv technology involving 
+                    euv which uses uv light waves somehow... but they get euv machines from asml who also has no competition. so there is just no competition at every stage of the supply chain, so companies have lots of freedom over price setting. so hardware will probably not become less expensive until the ai bubble pops 
+                    (i assume because demand for them would go way down -> prices lowering).
+                    <a href = "https://www.youtube.com/watch?v=ISOIOadu7LE"> linus tech tips yt</a> 
+                </li>
+                <li><b>tsar nicholas ii, rasputin, russian revolution: </b> nicolas ii seemed like an alright guy but he was not a good ruler at all. he came into power in 1894, when russia was already in disarray, and the prv leader was determined to maintain autocratic rule which the people did not enjoy. nicholas ii was 
+                    not very attentive to the people's desires and also wwi was bad for russia. when he was away at war, this was when rasputin swept in and became an influence in court but he was hugely unpopular (so he got assassinated) (but also he was quite difficult to kill, or maybe the assassinators are just bad). anyways then 
+                    in 1917 the bolsheviks led by lenin took power and attempted to establish a communist state, and also nicholas ii and the rest of the romonovs were killed. 
+                    <a href = "https://www.history.com/articles/romanov-family-murder-execution-reasons"> history.com (one of multiple articles)</a>
+                </li>
+            <h5 style = "text-align: center;">wed - saturday (i got lazy)</h5>
+            <ul style = "padding-left:5%; padding-top:0">
+                <li><b>prisons in switzerland:</b> have way better accomodations for prisoners than in america, because they value reformative justice ? over the other one aka only punishment. i think there was an experiment where some american prison 
+                    tried to emulate that. there was also the whole prison abolition movement in america, which advocated for there to be no prisons, because they do not add any net good to society. 
+                    <a href = "https://youtu.be/rbSqLQmT2gc?si=pxVv-XuUm0gsZ9lm"> crashcourse yt</a>
+                </li>
+                <li><b>d&d viewed as demon rituals in the 80s??: </b> d&d used to be a niche game for military history nerds when first created in late 1970s, but it got popular quickly and then there were cases where teens who played d&d committed suicide, and newspapers and parents pointed to d&d as the source, wanting it to be banished because it was infilcting pain 
+                    in the younger generation supposedly. same with heavy metal music, where there were supposedly secret devilish messages encrypted in the music if you played it backwards. this panic was likely caused by more women entering the workforce 
+                    and therefore children being left alone for too long and people thought they were up to no good.</li>
+                    <a href = "https://www.history.com/articles/what-was-satanic-panic-1980s"> history.com</a>
+                </li>
+                <li><b>timekeeping and new years: </b>for a while, there was no unified timekeeping system and there was no need for it, so people across the US would celebrate the new years at vastly different times. but when the intercontinental railroad was constructed in 1980s, then there was a need for a standardized time 
+                    across the regions of the US, and then public clocks became more accurate, and so thats when people started to actually celebrate the new year at midnight on the dot, because they actually knew when it was.</li>
+                <a href = "https://www.history.com/articles/new-years-eve-time-innovations">history.com</a>
+                </li>
+            </ul>
+        </div>
+    -->
+
+    </div>
+
+    <footer style = "margin-top:0px;">
+        <h3 style = "color:chocolate; font-weight:lighter;font-family:cursive;">wooooohooooo</h3>
+    </footer>
+    <script src = "index2.js"></script>
+</body>
+</html>

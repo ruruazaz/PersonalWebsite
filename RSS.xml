@@ -1,0 +1,15 @@
+<rss version="2.0">
+    <channel>
+        <title>blogg</title>
+        <description>documenting random stuff ig</description>
+        <link>https://example.org/blog</link>
+        
+        <item>
+            <title>post 1</title>
+            <description>description of post 2</description>
+            <link>https://example.org/post-2</link>
+            <guid>post-2</guid>
+            <pubDate>Thu 19 Mar 2026, 04:38:00 -0400</pubDate>
+        </item>
+    </channel>
+</rss>

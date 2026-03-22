@@ -1,0 +1,272 @@
+html, body{
+    height:100%;
+    width: 100%;
+    overflow-x:hidden;
+    background-image: url("images/puzzleBG.jpg");
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:.95em;
+    opacity:97%;
+}
+
+
+header{
+    padding: 5px;
+    text-align:center;
+    font-size:2em;
+}
+
+#left{
+    width: 10%;
+    float: left;
+    height: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+
+aside, article{
+    box-sizing: border-box;
+    border-style: dashed;
+    border-width:1px;
+    border-color: brown;
+    padding-left: 1%;
+    padding-right:1%;
+    margin: 1%;
+    color:chocolate;
+    background-color:rgb(246, 241, 235);
+    box-shadow: 6px 4px rgba(188, 143, 122, 0.649);
+}
+
+#col1{
+    width:28%;
+    height:73%;
+    border-style:hidden;
+    padding:0;
+    float: left;
+    min-width:100px;
+    background:none;  
+    position:relative;
+    box-shadow:none;
+}
+#col2{
+    height:73%;
+}
+#nav{
+    width:100%;
+    margin:0;
+}
+#status{
+    width:47%;
+    margin:0;
+    margin-top:5%;
+    float:inline-start;
+    height:60%;
+    position:absolute;
+}
+#statuscafe {
+    padding: .5em;
+    margin-top: 5%;
+    margin-left:9%;
+    margin-right:9%;
+}
+#statuscafe-username {
+
+    margin-bottom: .5em;
+    margin-top:1.3em;
+    font-size:.6em;
+    z-index:2;
+    position:relative;;
+    color:brown;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#statuscafe-content {
+    padding-right:2em;
+    margin-right:2em;
+    min-height:70px;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:.90em;
+    color:brown;
+    z-index:2;
+    position:absolute;
+    
+}
+#status_icon{
+    width:95%;
+    height:97%;
+    min-height:90%;
+    margin-left:1.5%;
+    margin-top:2%;
+    z-index:1;
+    position:absolute;
+}
+
+
+
+#todo{
+    width: 47%;
+    margin:0;
+    float:inline-end;
+    margin-top:5%;
+    margin-left:0;
+    margin-bottom:0;
+    position:relative;
+    height:60%;
+
+}
+
+
+.nav{
+    list-style-type:square
+}
+.nav:hover,.blogselect:hover{
+    font-size:1.2em;
+    cursor:pointer;
+    color:brown;
+}
+
+img{
+    overflow-y:hidden;
+}
+
+article{
+    width: 48%;
+    min-width:300px;
+    float: left;
+    height: 73%;
+    overflow-y:scroll;
+    position:relative;
+    overflow-x:hidden;
+    scrollbar-color: rgb(228, 200, 191) rgb(241, 240, 236);
+}
+
+#strawberries{
+    width:100%;
+}
+#strwbrries{
+    margin-left:70%;
+    width:20%;
+}
+.wrapper{
+    overflow-x:hidden;
+    float:none;
+    display:inline-block;
+    position:absolute;
+}
+
+#blinkies{
+    margin-left:2%;
+    position:relative;
+    width:100%;
+    overflow-x:hidden;
+    justify-content:center
+}
+.blinkies{
+    margin-right:4px;
+    width:20%
+}
+
+#right{
+    width:10%;
+    float: right;
+    height: 70%;
+    box-sizing: border-box;
+    display:none;
+    position:absolute;
+    
+}
+
+.content{
+    overflow-y:hidden;
+}
+
+footer{
+    display:block;
+    position:absolute;
+    bottom:0;
+    text-align:center;
+    width:100%;
+}
+
+#greeting{
+    animation-name: slide;
+    animation-duration:7s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+@keyframes slide{
+    from{transform: translateX(200%)}
+}
+
+#changelog{
+    display:block;
+    width:49%;
+    position:relative;
+    box-sizing:border-box;
+    border-style: dashed;
+    margin-bottom:3%;
+}
+
+.rsc{
+    margin-top:1%;
+}
+
+#blogselect{
+    width:23%;
+    margin:0;
+    margin-top:3%;
+    float:inline-start;
+    height:50%;
+    position:relative;
+}
+#blogpage{
+    color:brown;
+    padding-left:2%;
+    width:71%;
+    margin:0;
+    margin-top:3%;
+    float:inline-end;
+    height:90%;
+    position:relative;
+    box-shadow:none;
+    background-image:url("images/paperBG.jpg");
+}
+#blog{
+    height:100%;
+}
+.blogselect{
+    padding:0;
+    margin:0;
+    list-style-type:circle;
+}
+
+
+#wilsonLockIn{
+    position:absolute;
+    display: block;
+    
+    width: 20%;
+    right:40%;
+    bottom:10%;
+    
+}
+
+h5{
+    text-align:center;
+    margin-top:10%;
+    font-size:small;
+    margin-bottom:0%;
+    background-color:antiquewhite;
+}
+b{
+    font-size:small;
+}
+
+.musicpic:hover{
+    cursor:pointer;
+    opacity: 50%;
+}
