@@ -1,15 +1,15 @@
 <rss version="2.0">
     <channel>
-        <title>blogg</title>
+        <title>rurus rss feed!!</title>
         <description>documenting random stuff ig</description>
-        <link>https://example.org/blog</link>
+        <link>https://ruruazaz.nekoweb.org</link>
         
         <item>
-            <title>post 1</title>
-            <description>description of post 2</description>
-            <link>https://example.org/post-2</link>
-            <guid>post-2</guid>
-            <pubDate>Thu 19 Mar 2026, 04:38:00 -0400</pubDate>
+            <title>testingg</title>
+            <description>first post, seeing how this works? also, new blog!</description>
+            <link>https://ruruazaz.nekoweb.org/langblog.html</link>
+            <guid>testing</guid>
+            <pubDate>Sun, 22 Mar 2026, 23:00 -CDT</pubDate>
         </item>
     </channel>
 </rss>

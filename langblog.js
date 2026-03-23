@@ -2,7 +2,8 @@
 
 content = document.getElementById("content")
 
-content.innerHTML = document.getElementById('about').innerHTML
+//initialize thing
+content.innerHTML = document.getElementById('2').innerHTML
 
 function changeEntry(entry){
 
